@@ -519,8 +519,8 @@ void LoadResources() {
 	);
 
 	btn_return_main = new Button({ 1100, 20, 1260, 60 }, L"resources/return_btn/", []() { ReturnMainmenu(); });
-	btn_open_github = new Button({ 1200, 640, 1260, 700 }, L"resources/github/", []() { ShellExecute(NULL, L"open", L"https://space.bilibili.com/382365750", NULL, NULL, SW_SHOWNORMAL);});
-	btn_open_bili = new Button({ 1120, 640, 1180, 700 }, L"resources/bilibili/", []() { ShellExecute(NULL, L"open", L"https://github.com/stand114514/maodie-forest", NULL, NULL, SW_SHOWNORMAL);});
+	btn_open_github = new Button({ 1200, 640, 1260, 700 }, L"resources/github/", []() { ShellExecute(NULL, L"open", L"https://github.com/stand114514/maodie-forest", NULL, NULL, SW_SHOWNORMAL);});
+	btn_open_bili = new Button({ 1120, 640, 1180, 700 }, L"resources/bilibili/", []() { ShellExecute(NULL, L"open", L"https://space.bilibili.com/382365750", NULL, NULL, SW_SHOWNORMAL);});
 
 	last_score = ScoreManager::ReadScore(); // 读取分数记录
 
