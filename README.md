@@ -62,6 +62,17 @@
 - Download the latest [Release](https://github.com/yourusername/maodie-forest/releases) file.
 - Extract the archive and run `耄耋森林.exe` to play the game.
 
+## Q&A
+
+Q: 主播主播，为什么一开始是三个爪？  
+A: 因为三脚猫功夫(好冷
+
+Q: 游戏还会更新吗？  
+A: 因为这个只是学习的产物，不会再更新了，不过可以期待一下，主包去学新项目了
+
+Q: 能不能定制内容？  
+A: 小小的调整一下是没问题，太复杂了要收费噢，具体bili联系我
+
 ## 致谢
 
 ### 中文

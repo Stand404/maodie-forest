@@ -131,6 +131,7 @@
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Atlas.cpp" />
     <ClCompile Include="Buttons.cpp" />
+    <ClCompile Include="CollisionDetection.cpp" />
     <ClCompile Include="EnemyConfig.cpp" />
     <ClCompile Include="Global.cpp" />
     <ClCompile Include="GraphicsUtil.cpp" />
@@ -141,6 +142,7 @@
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Atlas.h" />
     <ClInclude Include="Buttons.h" />
+    <ClInclude Include="CollisionDetection.h" />
     <ClInclude Include="EnemyConfig.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="Global.h" />

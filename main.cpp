@@ -11,6 +11,7 @@
 #include "GraphicsUtil.h"
 #include "Buttons.h"
 #include <windows.h>
+#include "CollisionDetection.h"
 
 GameState current_state = GameState::Loading;
 
@@ -20,6 +21,9 @@ int current_exp = 0;
 int score = 0;
 int last_score = 0;
 
+double radial_speed = 0.0025;        // 径向波动速度
+double tangent_speed = 0.0045;      // 切向波动速度
+
 #pragma comment(lib, "MSIMG32.LIB")
 #pragma comment(lib, "Winmm.lib")
 
@@ -27,6 +31,8 @@ class Bullet {
 public:
 	POINT position = { 0, 0 };
 	double rotation_angle = 0.0; // 子弹的旋转角度（弧度）
+	int WIDTH = 20;
+	int HEIGHT = 40;
 
 	Bullet() = default;
 
@@ -44,7 +50,7 @@ public:
 		rotateimage(
 			&img_rotated,
 			&img_bullet,
-			rotation_angle / 1.3,  // 弧度转角度
+			rotation_angle,  // 弧度转角度
 			TRANSPARENT,  // 透明背景
 			true,        // 调整大小以适应旋转
 			false        // 不裁剪
@@ -238,9 +244,23 @@ public:
 	};
 
 	bool CheckBulletCollision(const Bullet& bullet) {
-		bool is_overlap_x = bullet.position.x > position.x && bullet.position.x < position.x + width;
+	/*	bool is_overlap_x = bullet.position.x > position.x && bullet.position.x < position.x + width;
 		bool is_overlap_y = bullet.position.y > position.y && bullet.position.y < position.y + height;
-		return is_overlap_x && is_overlap_y;
+		return is_overlap_x && is_overlap_y;*/
+		//判定区域比图片小一点，增加难度
+		int padding = 5;
+		return CheckCollision(
+			{ 
+				position.x + padding, position.y + padding,
+				position.x + width - padding, 
+				position.y + height - padding,
+			0 },
+			{ 
+				bullet.position.x + padding, 
+				bullet.position.y + padding, 
+				bullet.position.x + bullet.WIDTH - padding, 
+				bullet.position.y + bullet.HEIGHT - padding,
+				bullet.rotation_angle });
 	}
 
 	bool CheckPlayerCollision(const Player* player) {
@@ -329,49 +349,18 @@ void TryGenerateEnemy (std::vector<Enemy*>& enemy_list) {
 }
 
 void UpdateBullets(std::vector<Bullet>& bullet_list, Player* player) {
-	const double RADIAL_SPEED = 0.0045;        // 径向波动速度
-	const double TANGENT_SPEED = 0.0055;      // 切向波动速度
-	const double ROTATION_SMOOTHNESS = 0.1;   // 旋转平滑系数（0.0~1.0，越小越平滑）
-
 	double radian_interval = 2 * 3.1415926 / bullet_list.size();
 	POINT player_pos = player->GetPosition();
-	double radius = 100 + 25 * sin(GetTickCount() * RADIAL_SPEED);
+	double radius = 100 + 50 * sin(GetTickCount() * tangent_speed);
 
 	for (size_t i = 0; i < bullet_list.size(); i++) {
-		double radian = GetTickCount() * TANGENT_SPEED + radian_interval * i;
+		double radian = GetTickCount() * tangent_speed + radian_interval * i;
 		bullet_list[i].position.x = player_pos.x + player->WIDTH / 2 + (int)(radius * sin(radian));
 		bullet_list[i].position.y = player_pos.y + player->HEIGHT / 2 + (int)(radius * cos(radian));
 
-		// 计算子弹与玩家的相对位置
-		double dx = player_pos.x + player->WIDTH / 2 - bullet_list[i].position.x;
-		double dy = player_pos.y + player->HEIGHT / 2 - bullet_list[i].position.y;
-
-		// 计算目标角度（朝向玩家）
-		double target_angle = atan2(dy, dx);
-
-		// 平滑过渡当前角度到目标角度
-		double angle_diff = target_angle - bullet_list[i].rotation_angle;
-		// 确保角度差在 -π 到 π 之间
-		if (angle_diff > 3.1415926) angle_diff -= 2 * 3.1415926;
-		if (angle_diff < -3.1415926) angle_diff += 2 * 3.1415926;
-
-		// 应用平滑旋转
-		bullet_list[i].rotation_angle += angle_diff * ROTATION_SMOOTHNESS;
+		// 设置子弹的旋转角度为环绕角度
+		bullet_list[i].rotation_angle = radian;
 	}
-}
-
-void ResetGame(Player* player) {
-	score = 0;
-	current_exp = 0;
-
-	for (size_t i = 0; i < enemy_list.size(); i++)
-	{
-		Enemy* enemy = enemy_list[i];
-		std::swap(enemy_list[i], enemy_list.back());
-		enemy_list.pop_back();
-		delete enemy;
-	}
-	player->Reset();
 }
 
 void ReturnMainmenu() {
@@ -381,7 +370,17 @@ void ReturnMainmenu() {
 		last_score = score;
 	}
 
-	ResetGame(player);
+	score = 0;
+	current_exp = 0;
+	radial_speed = 0.0025;        // 径向波动速度
+	tangent_speed = 0.0045;      // 切向波动速度
+
+	for (size_t i = 0; i < enemy_list.size(); ++i)
+	{
+		delete enemy_list[i]; // 释放每个敌人的内存
+	}
+	enemy_list.clear(); // 清空容器
+	player->Reset();
 	current_state = GameState::Waiting;
 }
 
@@ -416,6 +415,8 @@ void RenderGame() {
 					level++;
 					// 限制爪子数量防止无敌
 					if (level < 8) bullet_list.push_back(Bullet());
+					else if (level % 2 == 1) radial_speed += 0.001;
+					else tangent_speed += 0.001;
 				}
 			}
 		}
@@ -445,7 +446,7 @@ void RenderGame() {
 	bar(exp_bar_x, EXP_BAR_Y, exp_bar_x + EXP_BAR_WIDTH, EXP_BAR_Y + EXP_BAR_HEIGHT);
 
 	// 绘制进度条填充部分
-	int exp_bar_fill_width = (current_exp * EXP_BAR_WIDTH) / (level * 10); // 进度条填充宽度
+	int exp_bar_fill_width = (current_exp * EXP_BAR_WIDTH) / (level * 10); 
 	setfillcolor(GREEN);
 	bar(exp_bar_x, EXP_BAR_Y, exp_bar_x + exp_bar_fill_width, EXP_BAR_Y + EXP_BAR_HEIGHT);
 
@@ -457,10 +458,11 @@ void RenderGame() {
 	settextcolor(WHITE);
 	settextstyle(30, 0, _T("微软雅黑"));
 	std::wstring expText = L"经验: " + std::to_wstring(current_exp) + L"/" + std::to_wstring(level * 10);
-	outtextxy(exp_bar_x, EXP_BAR_Y - 40, expText.c_str()); // 文本位置稍微调整
+	outtextxy(exp_bar_x, EXP_BAR_Y - 40, expText.c_str()); 
 
 	std::wstring levelText = L"等级: " + std::to_wstring(level) + L"/100";
-	outtextxy(exp_bar_x + EXP_BAR_WIDTH - 120, EXP_BAR_Y - 40, levelText.c_str());
+	int level_width = textwidth(levelText.c_str());
+	outtextxy(exp_bar_x + EXP_BAR_WIDTH - level_width, EXP_BAR_Y - 40, levelText.c_str());
 
 	std::wstring scoreText = L"分数: " + std::to_wstring(score);
 	outtextxy(10, 10, scoreText.c_str());
