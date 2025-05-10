@@ -2,32 +2,32 @@
 
 ![Maodie Forest](Maodie.ico)
 
-# ë£ñóÖ®É­ (Maodie Forest)
+# è€„è€‹ä¹‹æ£® (Maodie Forest)
 </div>
 
-## ¼ò½é
-Ò»¸ö»ùÓÚC++ºÍEasyX¿ª·¢µÄÀàÎüÑª¹íĞÒ´æÕßĞ¡ÓÎÏ·¡£
+## ç®€ä»‹
+ä¸€ä¸ªåŸºäºC++å’ŒEasyXå¼€å‘çš„ç±»å¸è¡€é¬¼å¹¸å­˜è€…å°æ¸¸æˆã€‚
 
 ![game](a8381b1af897dc6f1e361a570d9d084b.png)
 
-## ±àÒëÖ¸ÄÏ
+## ç¼–è¯‘æŒ‡å—
 
-ÒÔÏÂÊÇ¸üĞÂºóµÄ±àÒëÖ¸ÄÏ£¬Ôö¼ÓÁË±àÒëºó½« `resources` ÎÄ¼ş¼Ğ¸´ÖÆµ½¿ÉÖ´ĞĞÎÄ¼şÍ³Ò»²ã¼¶µÄ²½Öè£º
+ä»¥ä¸‹æ˜¯æ›´æ–°åçš„ç¼–è¯‘æŒ‡å—ï¼Œå¢åŠ äº†ç¼–è¯‘åå°† `resources` æ–‡ä»¶å¤¹å¤åˆ¶åˆ°å¯æ‰§è¡Œæ–‡ä»¶ç»Ÿä¸€å±‚çº§çš„æ­¥éª¤ï¼š
 
-### ÖĞÎÄ
-1. **¿ËÂ¡´úÂë**£º
+### ä¸­æ–‡
+1. **å…‹éš†ä»£ç **ï¼š
    ```bash
    git clone https://github.com/yourusername/maodie-forest.git
    ```
-2. **°²×° Visual Studio**£º
-   - ÍÆ¼ö°²×°×îĞÂ°æ±¾µÄ Visual Studio£¬²¢È·±£°²×°ÁË C++ ¿ª·¢¹¤¾ß¼¯¡£
-3. **°²×° EasyX**£º
-   - ·ÃÎÊ [EasyX ¹Ù·½ÍøÕ¾](http://www.easyx.cn/) ÏÂÔØ²¢°²×° EasyX ¿â¡£
-   - ÅäÖÃ EasyX µ½ÄãµÄÏîÄ¿ÖĞ£¬È·±£ÏîÄ¿ÄÜ¹»ÕıÈ·Á´½Óµ½ EasyX ¿â¡£
-4. **±àÒëÏîÄ¿**£º
-   - ´ò¿ª Visual Studio£¬¼ÓÔØÏîÄ¿²¢½øĞĞ±àÒë¡£
-5. **¸´ÖÆ×ÊÔ´ÎÄ¼ş¼Ğ**£º
-   - ±àÒëÍê³Éºó£¬½«ÏîÄ¿ÖĞµÄ `resources` ÎÄ¼ş¼Ğ¸´ÖÆµ½Éú³ÉµÄ¿ÉÖ´ĞĞÎÄ¼şËùÔÚµÄÄ¿Â¼£¨Í¨³£ÊÇ `Debug` »ò `Release` ÎÄ¼ş¼Ğ£©ÖĞ£¬È·±£¿ÉÖ´ĞĞÎÄ¼şÓë `resources` ÎÄ¼ş¼Ğ´¦ÓÚÍ¬Ò»²ã¼¶¡£
+2. **å®‰è£… Visual Studio**ï¼š
+   - æ¨èå®‰è£…æœ€æ–°ç‰ˆæœ¬çš„ Visual Studioï¼Œå¹¶ç¡®ä¿å®‰è£…äº† C++ å¼€å‘å·¥å…·é›†ã€‚
+3. **å®‰è£… EasyX**ï¼š
+   - è®¿é—® [EasyX å®˜æ–¹ç½‘ç«™](http://www.easyx.cn/) ä¸‹è½½å¹¶å®‰è£… EasyX åº“ã€‚
+   - é…ç½® EasyX åˆ°ä½ çš„é¡¹ç›®ä¸­ï¼Œç¡®ä¿é¡¹ç›®èƒ½å¤Ÿæ­£ç¡®é“¾æ¥åˆ° EasyX åº“ã€‚
+4. **ç¼–è¯‘é¡¹ç›®**ï¼š
+   - æ‰“å¼€ Visual Studioï¼ŒåŠ è½½é¡¹ç›®å¹¶è¿›è¡Œç¼–è¯‘ã€‚
+5. **å¤åˆ¶èµ„æºæ–‡ä»¶å¤¹**ï¼š
+   - ç¼–è¯‘å®Œæˆåï¼Œå°†é¡¹ç›®ä¸­çš„ `resources` æ–‡ä»¶å¤¹å¤åˆ¶åˆ°ç”Ÿæˆçš„å¯æ‰§è¡Œæ–‡ä»¶æ‰€åœ¨çš„ç›®å½•ï¼ˆé€šå¸¸æ˜¯ `Debug` æˆ– `Release` æ–‡ä»¶å¤¹ï¼‰ä¸­ï¼Œç¡®ä¿å¯æ‰§è¡Œæ–‡ä»¶ä¸ `resources` æ–‡ä»¶å¤¹å¤„äºåŒä¸€å±‚çº§ã€‚
 
 ### English
 1. **Clone the repository**:
@@ -44,41 +44,41 @@
 5. **Copy the resources folder**:
    - After compilation, copy the `resources` folder from the project directory to the directory where the executable file is located (usually the `Debug` or `Release` folder), ensuring that the executable file and the `resources` folder are at the same level.
 
-## ĞŞ¸Ä×ÊÔ´
+## ä¿®æ”¹èµ„æº
 
-### ÖĞÎÄ
-- Ìæ»» `resources` Ä¿Â¼ÖĞµÄ×ÊÔ´ÎÄ¼ş¼´¿É£¬ÎÄ¼şÃûĞè±£³ÖÒ»ÖÂ¡£
-- ÀıÈç£¬Èç¹ûÄãÏëÌæ»»ÓÎÏ·ÖĞµÄ±³¾°£¬Ö»Ğè½« `resources/bg.jpg` Ìæ»»ÎªÄãµÄĞÂÍ¼±êÎÄ¼ş£¬µ«ÎÄ¼şÃû±ØĞë±£³ÖÎª `bg.jpg`¡£
+### ä¸­æ–‡
+- æ›¿æ¢ `resources` ç›®å½•ä¸­çš„èµ„æºæ–‡ä»¶å³å¯ï¼Œæ–‡ä»¶åéœ€ä¿æŒä¸€è‡´ã€‚
+- ä¾‹å¦‚ï¼Œå¦‚æœä½ æƒ³æ›¿æ¢æ¸¸æˆä¸­çš„èƒŒæ™¯ï¼Œåªéœ€å°† `resources/bg.jpg` æ›¿æ¢ä¸ºä½ çš„æ–°å›¾æ ‡æ–‡ä»¶ï¼Œä½†æ–‡ä»¶åå¿…é¡»ä¿æŒä¸º `bg.jpg`ã€‚
 
 ### English
 - Replace the resources files in the `resources` directory. The filenames must remain consistent.
 - For example, if you want to replace the game background, simply replace `resources/bg.jpg` with your new icon file, but the filename must remain `bg.jpg`.
 
-## ÌåÑéÓÎÏ·
+## ä½“éªŒæ¸¸æˆ
 
-### ÖĞÎÄ
-- ÏÂÔØ×îĞÂ°æ±¾µÄ [Release](https://github.com/yourusername/maodie-forest/releases) ÎÄ¼ş¡£
-- ½âÑ¹ºóÔËĞĞ `ë£ñóÉ­ÁÖ.exe` ÌåÑéÓÎÏ·¡£
+### ä¸­æ–‡
+- ä¸‹è½½æœ€æ–°ç‰ˆæœ¬çš„ [Release](https://github.com/stand114514/maodie-forest/releases) æ–‡ä»¶ã€‚
+- è§£å‹åè¿è¡Œ `è€„è€‹æ£®æ—.exe` ä½“éªŒæ¸¸æˆã€‚
 
 ### English
-- Download the latest [Release](https://github.com/yourusername/maodie-forest/releases) file.
-- Extract the archive and run `ë£ñóÉ­ÁÖ.exe` to play the game.
+- Download the latest [Release](https://github.com/stand114514/maodie-forest/releases) file.
+- Extract the archive and run `è€„è€‹æ£®æ—.exe` to play the game.
 
 ## Q&A
 
-Q: Ö÷²¥Ö÷²¥£¬ÎªÊ²Ã´Ò»¿ªÊ¼ÊÇÈı¸ö×¦£¿  
-A: ÒòÎªÈı½ÅÃ¨¹¦·ò(ºÃÀä
+Q: ä¸»æ’­ä¸»æ’­ï¼Œä¸ºä»€ä¹ˆä¸€å¼€å§‹æ˜¯ä¸‰ä¸ªçˆªï¼Ÿ  
+A: å› ä¸ºä¸‰è„šçŒ«åŠŸå¤«(å¥½å†·
 
-Q: ÓÎÏ·»¹»á¸üĞÂÂğ£¿  
-A: ÒòÎªÕâ¸öÖ»ÊÇÑ§Ï°µÄ²úÎï£¬²»»áÔÙ¸üĞÂÁË£¬²»¹ı¿ÉÒÔÆÚ´ıÒ»ÏÂ£¬Ö÷°üÈ¥Ñ§ĞÂÏîÄ¿ÁË
+Q: æ¸¸æˆè¿˜ä¼šæ›´æ–°å—ï¼Ÿ  
+A: å› ä¸ºè¿™ä¸ªåªæ˜¯å­¦ä¹ çš„äº§ç‰©ï¼Œä¸ä¼šå†æ›´æ–°äº†ï¼Œä¸è¿‡å¯ä»¥æœŸå¾…ä¸€ä¸‹ï¼Œä¸»åŒ…å»å­¦æ–°é¡¹ç›®äº†
 
-Q: ÄÜ²»ÄÜ¶¨ÖÆÄÚÈİ£¿  
-A: Ğ¡Ğ¡µÄµ÷ÕûÒ»ÏÂÊÇÃ»ÎÊÌâ£¬Ì«¸´ÔÓÁËÒªÊÕ·ÑàŞ£¬¾ßÌåbiliÁªÏµÎÒ
+Q: èƒ½ä¸èƒ½å®šåˆ¶å†…å®¹ï¼Ÿ  
+A: å°å°çš„è°ƒæ•´ä¸€ä¸‹æ˜¯æ²¡é—®é¢˜ï¼Œå¤ªå¤æ‚äº†è¦æ”¶è´¹å™¢ï¼Œå…·ä½“biliè”ç³»æˆ‘
 
-## ÖÂĞ»
+## è‡´è°¢
 
-### ÖĞÎÄ
-- ±¾ÏîÄ¿»ùÓÚ [¡¾´ÓÁã¿ªÊ¼µÄC++ÓÎÏ·¿ª·¢¡¿È«ÓîÖæ×î¼òµ¥µÄÀàÎüÑª¹íĞÒ´æÕßÓÎÏ·¿ª·¢ | EasyXÖÆ×÷ÌáÍßÌØĞÒ´æÕß¡¿](https://www.bilibili.com/video/BV1eM4m1S74K) ÖÆ×÷£¬¸ĞĞ»×÷ÕßµÄ·ÖÏí¡£
+### ä¸­æ–‡
+- æœ¬é¡¹ç›®åŸºäº [ã€ä»é›¶å¼€å§‹çš„C++æ¸¸æˆå¼€å‘ã€‘å…¨å®‡å®™æœ€ç®€å•çš„ç±»å¸è¡€é¬¼å¹¸å­˜è€…æ¸¸æˆå¼€å‘ | EasyXåˆ¶ä½œæç“¦ç‰¹å¹¸å­˜è€…ã€‘](https://www.bilibili.com/video/BV1eM4m1S74K) åˆ¶ä½œï¼Œæ„Ÿè°¢ä½œè€…çš„åˆ†äº«ã€‚
 
 ### English
-- This project is based on a [¡¾´ÓÁã¿ªÊ¼µÄC++ÓÎÏ·¿ª·¢¡¿È«ÓîÖæ×î¼òµ¥µÄÀàÎüÑª¹íĞÒ´æÕßÓÎÏ·¿ª·¢ | EasyXÖÆ×÷ÌáÍßÌØĞÒ´æÕß¡¿](https://www.bilibili.com/video/BV1eM4m1S74K). Thanks to the author for sharing.
+- This project is based on a [ã€ä»é›¶å¼€å§‹çš„C++æ¸¸æˆå¼€å‘ã€‘å…¨å®‡å®™æœ€ç®€å•çš„ç±»å¸è¡€é¬¼å¹¸å­˜è€…æ¸¸æˆå¼€å‘ | EasyXåˆ¶ä½œæç“¦ç‰¹å¹¸å­˜è€…ã€‘](https://www.bilibili.com/video/BV1eM4m1S74K). Thanks to the author for sharing.
