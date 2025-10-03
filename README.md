@@ -57,11 +57,11 @@
 ## 体验游戏
 
 ### 中文
-- 下载最新版本的 [Release](https://github.com/stand114514/maodie-forest/releases) 文件。
+- 下载最新版本的 [Release](https://github.com/stand404/maodie-forest/releases) 文件。
 - 解压后运行 `耄耋森林.exe` 体验游戏。
 
 ### English
-- Download the latest [Release](https://github.com/stand114514/maodie-forest/releases) file.
+- Download the latest [Release](https://github.com/stand404/maodie-forest/releases) file.
 - Extract the archive and run `耄耋森林.exe` to play the game.
 
 ## Q&A
